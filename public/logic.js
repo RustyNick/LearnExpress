@@ -6,16 +6,41 @@ async function collectText() {
 }
 
 // saves to JSON file
-async function saveNew() {
-    const status = await makeRequest("http://localhost:3000/api", "POST", saveTodo())
-    console.log(status)
+
+function checkData() {
+    const info = getValue()
+    if (info == "") {
+        alert("Invalid input")
+        return
+    }
+    saveNew()
 }
 
-async function getDnd() {
-    const getInfo = await makeRequest("https://www.dnd5eapi.co/api/", "GET")
-    const text = document.getElementById("dndText")
-    text.innerText = JSON.stringify(getInfo)
-    console.log(getInfo)
+function getRace() {
+    let randomRace = getRaceList[Math.floor(Math.random() * getRaceList.length)]
+    return randomRace
+}
+function getClass() {
+    let randomClass = getClassList[Math.floor(Math.random() * getClassList.length)]
+    return randomClass
+}
+
+
+async function saveNew() {
+
+    const status = await makeRequest("http://localhost:3000/api", "POST", saveTodo())
+    console.log(status)
+    clear()
+}
+
+async function getDndRace() {
+    const getSpecie = await makeRequest(getRace(), "GET")
+    return getSpecie
+}
+
+async function getDndClass() {
+    const getDnDClass = await makeRequest(getClass(), "GET")
+    return getDnDClass
 }
 
 async function makeRequest(url, method, body) {
@@ -25,7 +50,6 @@ async function makeRequest(url, method, body) {
             method,
             body: JSON.stringify(body)
         })
-        console.log(response)
         const result = await response.json()
         return result
 
@@ -35,6 +59,14 @@ async function makeRequest(url, method, body) {
 
 }
 
+function getlocation() {
+
+
+}
+
+function clear() {
+    document.getElementById("textInput").value = ""
+}
 
 function getValue() {
     let getTodo = document.getElementById("textInput").value
@@ -45,6 +77,5 @@ function getValue() {
 function saveTodo() {
     let todo = {}
     todo = { todo: getValue() }
-    console.log(todo)
     return todo
 }

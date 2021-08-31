@@ -19,7 +19,7 @@ server.post('/api', (req, res) => {
         mydata.push(req.body)
         fs.writeFileSync("mydata.json", JSON.stringify(mydata))
         res.json("sparat")
-        console.log(req.body, "does this print?")
+        console.log(req.body)
     } catch (err) {
 
     }

@@ -12,17 +12,18 @@
 </head>
 
 <body>
+    <header>
+        <h1>Dungeons & Dragons Generator</h1>
+    </header>
     <main>
-        <h1>Hello there</h1>
-        <input id="textInput" type="text" placeholder="todo...">
-        <button onClick="saveNew()">save New</button>
-        <!-- <button onClick="saveTodo()">Save todo</button> -->
-        <button onClick="collectText()">Get my text</button>
-        <h3>Hello there</h3>
-
-        <div>
-            <button onClick="getDnd()">get my dndApi</button>
-            <p id="dndText"></p>
+        <div class="wrapper">
+            <input onfocus="this.value" id="textInput" type="text" placeholder="todo...">
+            <button onClick="checkData()">save New</button>
+            <!-- <button onClick="saveTodo()">Save todo</button> -->
+            <button onClick="collectText()">Get my text</button>
+            <h3></h3>
+            <button onClick="cardContainer()">Generate</button>
+            <div id="cardContainer"></div>
         </div>
     </main>
 </body>
