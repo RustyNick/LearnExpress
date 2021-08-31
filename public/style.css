@@ -1,0 +1,51 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin:0;
+    padding:0;
+}
+
+main{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Base code */
+button{
+    min-width:150px;
+    margin:5px;
+    padding:10px 16px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    border-radius: 5px;
+    border:none;
+    transition: 0.3s;
+}
+
+/* Hover */
+button:hover{
+    background-color:darkcyan;
+    cursor: pointer;
+}
+
+/* Click */
+button:active{
+    background-color: darkmagenta;
+}
+
+input{
+margin:5px;
+border-top: none;
+border-left: none;
+border-right: none;
+border-bottom: 1px solid darkred;
+outline: none;
+}
+
+input:active{
+    border:none;
+}
