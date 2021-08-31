@@ -1,1 +1,26 @@
-[]
+[
+    {
+        "name": "",
+        "race": "Tiefling",
+        "age": "Tieflings mature at the same rate as humans but live a few years longer.",
+        "speed": 30,
+        "class": "Druid",
+        "hitDie": 8
+    },
+    {
+        "name": "",
+        "race": "Dragonborn",
+        "age": "Young dragonborn grow quickly. They walk hours after hatching, attain the size and development of a 10-year-old human child by the age of 3, and reach adulthood by 15. They live to be around 80.",
+        "speed": 30,
+        "class": "Bard",
+        "hitDie": 8
+    },
+    {
+        "name": "",
+        "race": "Half-Elf",
+        "age": "Half-elves mature at the same rate humans do and reach adulthood around the age of 20. They live much longer than humans, however, often exceeding 180 years.",
+        "speed": 30,
+        "class": "Wizard",
+        "hitDie": 6
+    }
+]

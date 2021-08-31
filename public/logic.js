@@ -1,3 +1,20 @@
+
+async function getMycharacter() {
+    let dndRaceInfo = await getDndRace()
+    let dndClassInfo = await getDndClass()
+    myCharcter = {}
+    myCharcter = {
+        name: "",
+        race: dndRaceInfo.name,
+        age: dndRaceInfo.age,
+        speed: dndRaceInfo.speed,
+        class: dndClassInfo.name,
+        hitDie: dndClassInfo.hit_die,
+    }
+    console.log(myCharcter)
+    return myCharcter
+}
+
 // get from JSon file
 async function collectText() {
     const textToDisplay = await makeRequest("http://localhost:3000/api", "GET")
@@ -8,12 +25,13 @@ async function collectText() {
 // saves to JSON file
 
 function checkData() {
-    const info = getValue()
-    if (info == "") {
-        alert("Invalid input")
-        return
-    }
-    saveNew()
+    /*     const info = getValue()
+        if (info == "") {
+            alert("Invalid input")
+            return
+        }
+        saveNew() */
+    saveNewCharacter()
 }
 
 function getRace() {
@@ -29,6 +47,13 @@ function getClass() {
 async function saveNew() {
 
     const status = await makeRequest("http://localhost:3000/api", "POST", saveTodo())
+    console.log(status)
+    clear()
+}
+
+async function saveNewCharacter() {
+
+    const status = await makeRequest("http://localhost:3000/api", "POST", saveCharacter())
     console.log(status)
     clear()
 }
@@ -78,4 +103,10 @@ function saveTodo() {
     let todo = {}
     todo = { todo: getValue() }
     return todo
+}
+
+function saveCharacter() {
+    let character = myCharcter
+    console.log(character)
+    return character
 }

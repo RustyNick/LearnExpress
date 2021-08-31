@@ -17,14 +17,15 @@
     </header>
     <main>
         <div class="wrapper">
-            <input onfocus="this.value" id="textInput" type="text" placeholder="todo...">
-            <button onClick="checkData()">save New</button>
+            <button onClick="cardContainer()">Generate</button>
+            <div id="cardContainer"></div>
+            <input onfocus="this.value" id="textInput" type="text" placeholder="Give it a Name...">
+            <button onClick="saveNew()">save New</button>
             <!-- <button onClick="saveTodo()">Save todo</button> -->
             <button onClick="collectText()">Get my text</button>
             <h3></h3>
-            <button onClick="cardContainer()">Generate</button>
-            <div id="cardContainer"></div>
         </div>
+        <button onClick="checkconsole()">Check console</button>
     </main>
 </body>
 
