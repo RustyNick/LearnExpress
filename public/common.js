@@ -9,6 +9,7 @@ async function cardContainer() {
     let character = await getMycharacter()
     let cardBody = document.createElement("div")
     cardBody.id = "cardBody"
+    cardBody.style.margin = "15px"
 
     let title = document.createElement("h2")
     title.id = "title"
@@ -42,3 +43,50 @@ async function cardContainer() {
 function checkconsole() {
     console.log(myCharcter)
 }
+
+async function characterCard() {
+    document.getElementById("output").innerText = ""
+    let character = await collectText()
+    /* let character = "dum dum" */
+    for (let i = 0; i < character.length; i++) {
+        const cardInfo = character[i];
+        console.log(character)
+
+
+        let cardBody = document.createElement("div")
+        cardBody.className = "cardBody"
+        cardBody.style.margin = "15px"
+
+        let title = document.createElement("h2")
+        title.className = "title"
+        title.innerText = cardInfo.race
+
+        let ageInfo = document.createElement("p")
+        ageInfo.className = "ageInfo"
+        ageInfo.style.wordWrap = "break-word"
+        ageInfo.innerText = "Age: " + cardInfo.age
+
+        let speedInfo = document.createElement("p")
+        speedInfo.className = "speedInfo"
+        speedInfo.innerText = "Speed: " + cardInfo.speed
+
+        let className = document.createElement("p")
+        className.className = "className"
+        className.innerText = "class: " + cardInfo.class
+
+        let hitDie = document.createElement("p")
+        hitDie.className = "hitDie"
+        hitDie.innerText = "Hit Die: D" + cardInfo.hitDie
+
+        let DeleteButton = document.createElement("button")
+        DeleteButton.className = "DeleteButton"
+        DeleteButton.innerText = "Delete"
+        DeleteButton.addEventListener('click', () => {
+            console.log("clicked")
+        })
+
+        cardBody.append(title, ageInfo, speedInfo, className, hitDie, DeleteButton);
+        document.getElementById("output").appendChild(cardBody)
+    }
+
+};

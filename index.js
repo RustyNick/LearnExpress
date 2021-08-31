@@ -9,6 +9,7 @@ server.get('/api', (req, res) => {
     let raw = fs.readFileSync("mydata.json")
     let mydata = JSON.parse(raw)
     res.json(JSON.stringify(mydata))
+    /* res.mydata */
 
 })
 

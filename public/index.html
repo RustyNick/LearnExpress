@@ -13,17 +13,21 @@
 
 <body>
     <header>
-        <h1>Dungeons & Dragons Generator</h1>
+        Dungeons & Dragons Generator
     </header>
     <main>
         <div class="wrapper">
             <button onClick="cardContainer()">Generate</button>
             <div id="cardContainer"></div>
             <input onfocus="this.value" id="textInput" type="text" placeholder="Give it a Name...">
-            <button onClick="saveNew()">save New</button>
-            <!-- <button onClick="saveTodo()">Save todo</button> -->
-            <button onClick="collectText()">Get my text</button>
-            <h3></h3>
+            <button onClick="checkData()">save New</button>
+
+            <button onClick="characterCard()">Get my text</button>
+
+
+        </div>
+        <div id="output">
+            <h1></h1>
         </div>
         <button onClick="checkconsole()">Check console</button>
     </main>
