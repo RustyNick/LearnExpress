@@ -96,8 +96,16 @@ border-top: none;
 border-left: none;
 border-right: none;
 border-bottom: 2px solid #d81921;
+padding-top:10px;
+padding-left:5px;
+padding-right:5px;
+padding-bottom:3px;
 outline: none;
+font-family:Arial, Helvetica, sans-serif;
+font-weight: bold;
+font-size: 1em;
 background-color: whitesmoke;
+border-radius: 5px;
 }
 
 input:active{

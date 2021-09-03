@@ -1,20 +1,11 @@
 [
     {
-        "id": "_74izbhdkb",
-        "name": "Grexes",
+        "id": "_8f9rzsoxa",
+        "name": "George",
         "race": "Human",
         "age": "Humans reach adulthood in their late teens and live less than a century.",
         "speed": 30,
-        "class": "Sorcerer",
-        "hitDie": 6
-    },
-    {
-        "id": "_8tr88lj78",
-        "name": "Hnerik",
-        "race": "Halfling",
-        "age": "A halfling reaches adulthood at the age of 20 and generally lives into the middle of his or her second century.",
-        "speed": 25,
-        "class": "Druid",
+        "class": "Bard",
         "hitDie": 8
     }
 ]

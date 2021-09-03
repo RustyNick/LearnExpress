@@ -30,16 +30,6 @@ async function getCharacter() {
     return characterInfo
 }
 
-// saves to JSON file
-function checkData() {
-    const info = getValue()
-    if (info == "") {
-        alert("Invalid input")
-        return
-    }
-    saveNew()
-}
-
 function getRace() {
     let randomRace = getRaceList[Math.floor(Math.random() * getRaceList.length)]
     return randomRace
@@ -49,18 +39,11 @@ function getClass() {
     return randomClass
 }
 
-
-async function saveNew() {
-    const status = await makeRequest("http://localhost:3000/api/", "POST", saveTodo())
-    console.log(status)
-    clear()
-}
-
 async function saveNewCharacter() {
     getNickname()
     const status = await makeRequest("http://localhost:3000/api/", "POST", saveCharacter())
     console.log(status)
-    clear()
+    cleatField()
     characterCard()
 }
 
@@ -98,25 +81,15 @@ async function makeRequest(url, method, body) {
 
 }
 
-function clear() {
-    document.getElementById("textInput").value = ""
-}
-
 function getNickname() {
     myCharcter.name = document.getElementById("nickname").value
+    if (myCharcter.name == "") myCharcter.name = ""
+
     return getNickname
 }
 
-function getValue() {
-    let getTodo = document.getElementById("textInput").value
-    return getTodo
-}
-
-//Saves the written input
-function saveTodo() {
-    let todo = {}
-    todo = { todo: getValue() }
-    return todo
+function cleatField() {
+    return document.getElementById("cardContainer").innerText = ""
 }
 
 function saveCharacter() {

@@ -4,6 +4,7 @@ const getClassList = ["https://www.dnd5eapi.co/api/classes/bard", "https://www.d
 
 let myCharcter = []
 
+//Render the generated results from API
 async function cardContainer() {
     document.getElementById("cardContainer").innerText = ""
 
@@ -45,6 +46,8 @@ async function cardContainer() {
     cardBody.append(title, nickname, ageInfo, speedInfo, className, hitDie, saveButton);
     document.getElementById("cardContainer").appendChild(cardBody)
 };
+
+//Renders the Character cards
 async function characterCard() {
     document.getElementById("output").innerText = ""
     let character = await getCharacter()
