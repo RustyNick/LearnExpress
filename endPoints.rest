@@ -1,8 +1,25 @@
+
 GET http://localhost:3000
 
-##
+###
 POST http://localhost:3000/api
 Content-Type: application/json
 
-##
+{   
+        "id": "random Id",
+        "name": "a name",
+        "race": "specie",
+        "age": "age",
+        "speed":30 ,
+        "class": "work",
+        "hitDie":6 
+}
+
+###
 GET https://www.dnd5eapi.co/api
+
+###
+DELETE http://localhost:3000/api/:id
+Content-Type: application/json
+
+{}

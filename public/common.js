@@ -6,14 +6,20 @@ let myCharcter = []
 
 async function cardContainer() {
     document.getElementById("cardContainer").innerText = ""
+
     let character = await getMycharacter()
     let cardBody = document.createElement("div")
+
     cardBody.id = "cardBody"
     cardBody.style.margin = "15px"
 
     let title = document.createElement("h2")
     title.id = "title"
     title.innerText = character.race
+
+    let nickname = document.createElement("input")
+    nickname.id = "nickname"
+    nickname.placeholder = "name your character..."
 
     let ageInfo = document.createElement("p")
     ageInfo.id = "ageInfo"
@@ -36,21 +42,15 @@ async function cardContainer() {
     saveButton.innerText = "Save character"
     saveButton.addEventListener('click', saveNewCharacter)
 
-    cardBody.append(title, ageInfo, speedInfo, className, hitDie, saveButton);
+    cardBody.append(title, nickname, ageInfo, speedInfo, className, hitDie, saveButton);
     document.getElementById("cardContainer").appendChild(cardBody)
 };
-
-function checkconsole() {
-    console.log(myCharcter)
-}
-
 async function characterCard() {
     document.getElementById("output").innerText = ""
-    let character = await collectText()
-    /* let character = "dum dum" */
+    let character = await getCharacter()
+
     for (let i = 0; i < character.length; i++) {
         const cardInfo = character[i];
-        console.log(character)
 
 
         let cardBody = document.createElement("div")
@@ -60,6 +60,10 @@ async function characterCard() {
         let title = document.createElement("h2")
         title.className = "title"
         title.innerText = cardInfo.race
+
+        let name = document.createElement("h4")
+        name.className = "name"
+        name.innerText = "Name: " + cardInfo.name
 
         let ageInfo = document.createElement("p")
         ageInfo.className = "ageInfo"
@@ -82,10 +86,9 @@ async function characterCard() {
         DeleteButton.className = "DeleteButton"
         DeleteButton.innerText = "Delete"
         DeleteButton.addEventListener('click', () => {
-            console.log("clicked")
+            deleteCharacter()
         })
-
-        cardBody.append(title, ageInfo, speedInfo, className, hitDie, DeleteButton);
+        cardBody.append(title, name, ageInfo, speedInfo, className, hitDie, DeleteButton);
         document.getElementById("output").appendChild(cardBody)
     }
 

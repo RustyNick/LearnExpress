@@ -13,23 +13,25 @@
 
 <body>
     <header>
-        Dungeons & Dragons Generator
+        D & D Character Generator
     </header>
     <main>
-        <div class="wrapper">
-            <button onClick="cardContainer()">Generate</button>
-            <div id="cardContainer"></div>
+        <div class="mothercontainer">
+            <div class="wrapper">
+                <button onClick="cardContainer()">Generate</button>
+                <div id="cardContainer">
+                </div>
+            </div>
+        </div>
+        <div>
             <input onfocus="this.value" id="textInput" type="text" placeholder="Give it a Name...">
             <button onClick="checkData()">save New</button>
-
-            <button onClick="characterCard()">Get my text</button>
-
-
         </div>
-        <div id="output">
-            <h1></h1>
-        </div>
-        <button onClick="checkconsole()">Check console</button>
+
+        <div>
+
+            <div id="output">
+            </div>
     </main>
 </body>
 
